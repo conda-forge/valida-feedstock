@@ -1,5 +1,5 @@
 {% set name = "valida" %}
-{% set version = "0.7.0" %}
+{% set version = "0.7.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/valida-{{ version }}.tar.gz
-  sha256: 0453584bc8f166b9cb7c5f11c8879c92d71d9587515bc2a4d71c886dd8f2ff7c
+  sha256: a98d57eab802dab82f9da90ae67f9ffef30cb4806d730da8e2c86aaeb5212c73
 
 build:
   noarch: python
