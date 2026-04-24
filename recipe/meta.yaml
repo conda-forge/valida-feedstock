@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/valida-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/valida-{{ version }}.tar.gz
   sha256: 0453584bc8f166b9cb7c5f11c8879c92d71d9587515bc2a4d71c886dd8f2ff7c
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8,<3.12
+    - python {{ python_min }}
     - poetry-core >=1.0.0
     - pip
   run:
-    - python >=3.8,<3.12
+    - python >={{ python_min }},<3.12
     - ruamel.yaml >=0.17.20,<0.18.0
 
 test:
@@ -30,6 +30,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/hpcflow/valida
